@@ -35,6 +35,15 @@ dependencies:
   #Hashing of 3 numbers
   quiver: ^2.1.3
 
+  #State management
+  provider: ^4.3.2
+  
+  #Cached network image
+  cached_network_image: ^2.2.0+1
+
+  #Transparen image placeholder
+  transparent_image: ^1.0.0
+
 
 dev_dependencies:
   flutter_test:

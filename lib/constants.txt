@@ -1,0 +1,17 @@
+//MapBox url
+static String mapUrl ="https://api.mapbox.com/styles/v1/mapinapp/ckbyj7uew1ao11iqkwm229rpn/tiles/256";
+
+//Access Token for mapbox
+static String accessToken = "pk.eyJ1IjoibWFwaW5hcHAiLCJhIjoiY2tiNWY2Yzg0MTZhNzMxcGFsY3NrNDNsYiJ9.DC5omDLQS6EkgP5OZmmZKw";
+
+static const double baseTileSize = 256.0;
+
+url = "${TackerMap.mapUrl}/${tileNum.z}/${tileNum.x}/${tileNum.y}@2x?access_token=${TackerMap.accessToken}";
+
+static const double sizeFormulaConstant = 0.693147180560;
+static Size calculateSize(double currentZoom, int tileZoom) {
+    double size = Tile.baseTileSize *
+        exp(TileLayer.sizeFormulaConstant * (currentZoom - tileZoom));
+
+    return Size(size, size);
+}
